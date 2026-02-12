@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Time Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Time Tracker</h1>
+
+        <section class="timer-section card">
+            <h2>Timer</h2>
+            <div class="timer-display">00:00:00</div>
+            <input type="text" id="projectInput" placeholder="Project Name (e.g., Development, Meeting)">
+            <button id="startButton">Start Tracking</button>
+            <button id="stopButton" disabled>Stop Tracking</button>
+        </section>
+
+        <section class="add-entry-section card">
+            <h2>Add Forgotten Entry</h2>
+            <input type="text" id="addProjectInput" placeholder="Project Name">
+            <input type="datetime-local" id="addStartTimeInput">
+            <input type="datetime-local" id="addEndTimeInput">
+            <button id="addEntryButton">Add Entry</button>
+        </section>
+
+        <section class="timeline-section card">
+            <h2>Visual Timeline (Today)</h2>
+            <div id="timelineChart"></div>
+        </section>
+
+        <section class="analytics-section card">
+            <h2>Weekly Analytics</h2>
+            <div id="analyticsChart"></div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
